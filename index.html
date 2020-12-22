@@ -70,10 +70,11 @@
 
     <script>
         var timezone=Intl.DateTimeFormat().resolvedOptions().timeZone;
-        navigator.clipboard.writeText(timezone)
-        .then(r=>document.getElementById("copy").innerHTML="📋 Successfully copied timezone to clipboard!");
-        .catch(e=>document.getElementById("copy").innerHTML="❌ There was an error copying your timezone to clipboard!");
-
         document.getElementById("text").innerHTML=timezone;
+        
+        document.getElementById("copy").innerHTML="📋 Successfully copied timezone to clipboard!");
+        
+        navigator.clipboard.writeText(timezone)
+        .catch(e=>document.getElementById("copy").innerHTML="❌ There was an error copying your timezone to clipboard!");
     </script>
 </html>
