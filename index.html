@@ -87,9 +87,10 @@
     var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     document.getElementById("text").innerHTML = timezone;
-    document.getElementById("copy").innerHTML = "📋 Successfully copied timezone to clipboard!";
 
-    navigator.clipboard.writeText(timezone).catch(() => document.getElementById("copy").innerHTML = "❌ There was an error copying your timezone to clipboard!");
+    navigator.clipboard.writeText(timezone)
+    .then(() => document.getElementById("copy").innerHTML = "📋 Successfully copied timezone to clipboard!");
+    .catch(() => document.getElementById("copy").innerHTML = "❌ There was an error copying your timezone to clipboard!");
 </script>
 
 </html>`)
